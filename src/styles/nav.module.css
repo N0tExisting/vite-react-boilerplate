@@ -1,0 +1,8 @@
+/* TODO: Styling */
+.navItem {
+	@apply py-1 px-2;
+}
+
+.Link {
+	@apply text-center no-underline;
+}

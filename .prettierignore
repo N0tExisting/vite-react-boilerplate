@@ -1,0 +1,5 @@
+**/node_modules/
+/dist/
+
+# Prettier Messes up the comments.
+tsconfig*.json

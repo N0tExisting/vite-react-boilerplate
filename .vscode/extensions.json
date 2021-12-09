@@ -1,0 +1,42 @@
+{
+	"recommendations": [
+		"aaron-bond.better-comments",
+		"alefragnani.bookmarks",
+		"axetroy.vscode-auto-schema",
+		"bierner.emojisense",
+		"bierner.markdown-checkbox",
+		"bierner.markdown-emoji",
+		"csstools.postcss",
+		"davidanson.vscode-markdownlint",
+		"dbaeumer.vscode-eslint",
+		"editorconfig.editorconfig",
+		"esbenp.prettier-vscode",
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"gruntfuggly.todo-tree",
+		"henry-li.vscode-import-formatter",
+		"jock.svg",
+		"mikestead.dotenv",
+		"mrmlnc.vscode-attrs-sorter",
+		"mrmlnc.vscode-scss",
+		"perkovec.emoji",
+		"quicktype.quicktype",
+		"sergelamikhov.aligntokens",
+		"shardulm94.trailing-spaces",
+		"streetsidesoftware.code-spell-checker",
+		"tamasfe.even-better-toml",
+		"team-sapling.sapling",
+		"tobermory.es6-string-html",
+		"tombonnike.vscode-status-bar-format-toggle",
+		"usernamehw.errorlens",
+		"visualstudioexptteam.vscodeintellicode",
+		"voorjaar.windicss-intellisense",
+		"wayou.vscode-todo-highlight",
+		"wix.vscode-import-cost"
+	],
+	"unwantedRecommendations": [
+		"austenc.tailwind-docs",
+		"bourhaouta.tailwindshades",
+		"bradlc.vscode-tailwindcss"
+	]
+}

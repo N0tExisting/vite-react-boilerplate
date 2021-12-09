@@ -1,0 +1,12 @@
+**/node_modules/
+/dist/
+/analysis/
+
+# env
+.env.local
+.env.*.local
+!.env.example.local
+
+# Misc
+.DS_Store
+.dccache

@@ -1,0 +1,51 @@
+{
+	"cSpell.words": [
+		"attributify",
+		"crosstab",
+		"degit",
+		"iconify",
+		"imagetools",
+		"localstorage",
+		"pcss",
+		"storeon",
+		"svgr",
+		"undoable",
+		"unplugin",
+		"vite",
+		"vitejs",
+		"Windi",
+		"windicss"
+	],
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[toml]": {
+		"editor.defaultFormatter": "tamasfe.even-better-toml"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"evenBetterToml.commands.downloadSchemas": true,
+	"evenBetterToml.formatter.indentEntries": true,
+	"evenBetterToml.formatter.indentTables": true,
+	"evenBetterToml.schema.links": true
+}

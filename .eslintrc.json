@@ -1,0 +1,66 @@
+{
+	"settings": {
+		"linkComponents": [
+			// Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+			{
+				"name": "Link",
+				"linkAttribute": "to"
+			},
+			{
+				"name": "NavLink",
+				"linkAttribute": "to"
+			},
+			{
+				"name": "A",
+				"linkAttribute": "to"
+			}
+		]
+	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint",
+		"jsx-a11y",
+		"react",
+		"react-hooks",
+		"use-storeon",
+		"vest",
+		"prettier"
+	],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+		"plugin:jsx-a11y/recommended",
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:react-hooks/recommended"
+	],
+	"rules": {
+		"prettier/prettier": "warn",
+
+		"vest/exclude-before-test": "error",
+		"vest/hook-scope": "error",
+
+		"use-storeon/no-dupe-use-storeon": "error",
+		"use-storeon/no-unused-watched-vars": "error",
+		"use-storeon/no-unwatched-vars": "error",
+
+		"react/button-has-type": "warn",
+		"react/no-multi-comp": [
+			"error",
+			{
+				"ignoreStateless": true
+			}
+		],
+		"react/void-dom-elements-no-children": "error",
+		"react/jsx-no-target-blank": [
+			"warn",
+			{
+				"allowReferrer": true,
+				"enforceDynamicLinks": "always"
+				//"warnOnSpreadAttributes": <warn>
+			}
+		],
+		"react/jsx-no-script-url": "error"
+	}
+}
