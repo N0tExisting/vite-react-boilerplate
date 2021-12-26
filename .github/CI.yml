@@ -92,7 +92,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: yarn analysis:build
 
       - name: Upload Build Output
         uses: actions/upload-artifact@v2.2.4

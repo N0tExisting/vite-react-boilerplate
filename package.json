@@ -10,10 +10,11 @@
 		"serve": "vite preview",
 		"tsc": "tsc",
 		"lint": "eslint",
+		"format": "prettier --write ./**/*.{js,jsx,tsx,ts,json,md,yml,yaml} index.html",
 		"test": "peeky run",
 		"test:open": "peeky open",
 		"analysis": "windicss-analysis",
-		"analysis-build": "windicss-analysis --html analysis"
+		"analysis:build": "windicss-analysis --html analysis"
 	},
 	"dependencies": {
 		"@axe-core/react": "^4.3.2",
