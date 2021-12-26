@@ -14,9 +14,11 @@ const DefaultFallback: VFC<FallbackProps> = (props) => (
 				Try again
 			</button>
 			<code className="m-2">{props.error.toString()}</code>
+			{/* TODO: Deserialize the Error
 			<code className="m-2">
 				{JSON.stringify(props.error, undefined, '\t')}
 			</code>
+			*/}
 		</div>
 	</section>
 );

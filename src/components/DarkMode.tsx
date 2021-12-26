@@ -59,6 +59,7 @@ const Toggle = () => {
 		opacity,
 		config: properties.springConfig,
 	});
+
 	return (
 		<button
 			className="outline-none focus:outline-none hover:outline-none h-[24px] "
