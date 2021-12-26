@@ -1,4 +1,5 @@
 {
+	"root": true,
 	"settings": {
 		"linkComponents": [
 			// Components used as alternatives to <a> for linking, eg. <Link to={ url } />
@@ -29,11 +30,12 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended",
 		"plugin:jsx-a11y/recommended",
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
-		"plugin:react-hooks/recommended"
+		"plugin:react-hooks/recommended",
+		"plugin:prettier/recommended",
+		"prettier"
 	],
 	"rules": {
 		"prettier/prettier": "warn",

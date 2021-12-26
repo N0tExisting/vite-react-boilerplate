@@ -1,12 +1,13 @@
 **/node_modules/
 /dist/
 /analysis/
+/coverage/
 
 # env
 .env.local
 .env.*.local
-!.env.example.local
+/!.env.example.local
 
 # Misc
 .DS_Store
-.dccache
+/.dccache

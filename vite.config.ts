@@ -5,10 +5,10 @@ import WindiCSS from 'vite-plugin-windicss';
 import svgrPlugin from 'vite-plugin-svgr';
 import { minifyHtml } from 'vite-plugin-html';
 import Icons from 'unplugin-icons/vite';
+import { envConfig } from 'vite-plugin-env-config';
 import Pages, { ImportMode, ImportModeResolveFn } from 'vite-plugin-pages';
 // TODO: https://github.com/JonasKruckenberg/imagetools/blob/main/docs/README.md
 //import { imagetools } from 'vite-imagetools';
-
 // TODO: https://github.com/activeguild/vite-plugin-sass-dts
 // TODO: https://github.com/nystudio107/rollup-plugin-critical
 
@@ -37,6 +37,7 @@ export default defineConfig({
 			importMode,
 		}),
 		svgrPlugin(),
+		envConfig(),
 		Icons({
 			compiler: 'jsx',
 			jsx: 'react',
@@ -54,6 +55,9 @@ export default defineConfig({
 		}),
 		//imagetools(),
 	],
+	resolve: {
+		dedupe: ['react', 'react-dom', 'storeon'],
+	},
 	build: {
 		polyfillModulePreload: false,
 		assetsDir: 'static',
