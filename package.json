@@ -10,7 +10,7 @@
 		"serve": "vite preview",
 		"tsc": "tsc",
 		"lint": "eslint",
-		"format": "prettier --write ./**/*.{js,jsx,tsx,ts,json,md,yml,yaml} index.html",
+		"format": "prettier --write ./**/*.{js,jsx,tsx,ts,json,md,yml,yaml,html}",
 		"test": "peeky run",
 		"test:open": "peeky open",
 		"analysis": "windicss-analysis",
