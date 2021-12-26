@@ -33,7 +33,7 @@ const getInitial = (): DarkMode => {
 	}
 };
 
-function toggleSafe(mode: DarkMode) {
+export function safelySetMode(mode: DarkMode) {
 	if (isBrowser) {
 		document.documentElement.classList.toggle('dark', mode !== 'light');
 	}
@@ -42,21 +42,21 @@ function toggleSafe(mode: DarkMode) {
 const DarkModeStore: StoreonModule<DarkModeState, DarkModeEvents> = (store) => {
 	store.on('@init', () => {
 		const initial = getInitial();
-		toggleSafe(initial);
+		safelySetMode(initial);
 		return { darkMode: initial };
 	});
-	store.on('@changed', (_, data) => toggleSafe(data.darkMode));
+	store.on('@changed', (_, data) => safelySetMode(data.darkMode));
 	// Reducers
 	store.on('darkMode/reset', () => ({ darkMode: getInitial() }));
 	store.on('darkMode/toggle', ({ darkMode: mode }) => {
 		const newMode = mode === 'light' ? 'dark' : 'light';
-		toggleSafe(newMode);
+		safelySetMode(newMode);
 		return {
 			darkMode: newMode,
 		};
 	});
 	store.on('darkMode/set', (_, event) => {
-		toggleSafe(event);
+		safelySetMode(event);
 		return { darkMode: event };
 	});
 };

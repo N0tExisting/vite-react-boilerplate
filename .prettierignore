@@ -2,4 +2,4 @@
 /dist/
 
 # Prettier Messes up the comments.
-tsconfig*.json
+/tsconfig*.json

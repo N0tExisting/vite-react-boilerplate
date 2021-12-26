@@ -1,0 +1,8 @@
+{
+	"plugins": ["@peeky", "testing-library", "jest-dom"],
+	"extends": [
+		"plugin:@peeky/recommended",
+		"plugin:testing-library/react",
+		"plugin:jest-dom/recommended"
+	]
+}
