@@ -11,7 +11,7 @@ export default defineConfig({
 		include: [
 			'./**/*.html',
 			'./**/*.svg',
-			'./src/**/*.{js,ts,jsx,tsx}',
+			'./src/**/*.{js,ts,jsx,tsx,mdx}',
 			'./src/**/*.{css,scss,pcss}',
 		],
 	},

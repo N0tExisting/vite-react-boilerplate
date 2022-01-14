@@ -1,6 +1,7 @@
 {
 	"root": true,
 	"settings": {
+		"mdx/code-blocks": true,
 		"linkComponents": [
 			// Components used as alternatives to <a> for linking, eg. <Link to={ url } />
 			{
@@ -24,6 +25,7 @@
 		"react",
 		"react-hooks",
 		"use-storeon",
+		"mdx",
 		"vest",
 		"prettier"
 	],
@@ -34,6 +36,7 @@
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
 		"plugin:react-hooks/recommended",
+		"plugin:mdx/recommended",
 		"plugin:prettier/recommended",
 		"prettier"
 	],

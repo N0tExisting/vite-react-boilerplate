@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import WindiCSS from 'vite-plugin-windicss';
@@ -8,9 +9,13 @@ import Icons from 'unplugin-icons/vite';
 import { envConfig } from 'vite-plugin-env-config';
 import Pages, { ImportMode, ImportModeResolveFn } from 'vite-plugin-pages';
 // TODO: https://github.com/JonasKruckenberg/imagetools/blob/main/docs/README.md
-//import { imagetools } from 'vite-imagetools';
 // TODO: https://github.com/activeguild/vite-plugin-sass-dts
 // TODO: https://github.com/nystudio107/rollup-plugin-critical
+
+import mdx from '@mdx-js/rollup';
+import remarkGfm from 'remark-gfm';
+import remarkFrontmatter from 'remark-frontmatter';
+import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
 
 let shown = false;
 const importMode: ImportModeResolveFn = (path) => {
@@ -31,10 +36,18 @@ export default defineConfig({
 		react(),
 		WindiCSS(),
 		Pages({
+			extensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 			dirs: 'src/routes',
 			syncIndex: false,
 			resolver: 'react',
 			importMode,
+		}),
+		mdx({
+			remarkPlugins: [
+				[remarkGfm, { singleTilde: false }],
+				remarkFrontmatter,
+				remarkMdxFrontmatter,
+			],
 		}),
 		svgrPlugin(),
 		envConfig(),

@@ -33,7 +33,9 @@
 		"visualstudioexptteam.vscodeintellicode",
 		"voorjaar.windicss-intellisense",
 		"wayou.vscode-todo-highlight",
-		"wix.vscode-import-cost"
+		"wix.vscode-import-cost",
+		"xyc.vscode-mdx-preview",
+		"jounqin.vscode-mdx"
 	],
 	"unwantedRecommendations": [
 		"austenc.tailwind-docs",

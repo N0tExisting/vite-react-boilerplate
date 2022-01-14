@@ -3,6 +3,11 @@
 /analysis/
 /coverage/
 
+# Logs
+npm-*.log
+yarn-*.log
+.pnpm-*.log
+
 # env
 .env.local
 .env.*.local
