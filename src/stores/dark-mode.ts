@@ -1,4 +1,3 @@
-import * as isBrowser from 'is-browser';
 import type { StoreonModule } from 'storeon';
 
 export type DarkMode = 'dark' | 'light';
@@ -25,7 +24,7 @@ export interface DarkModeState {
 }
 
 const getInitial = (): DarkMode => {
-	if (!isBrowser) {
+	if (import.meta.env.SSR) {
 		return 'dark';
 	} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
 		return 'light';
@@ -36,7 +35,7 @@ const getInitial = (): DarkMode => {
 
 // TODO: Use React Helmet to toggle the header
 export function safelySetMode(mode: DarkMode) {
-	if (isBrowser) {
+	if (!import.meta.env.SSR) {
 		document.documentElement.classList.toggle('dark', mode !== 'light');
 	}
 }

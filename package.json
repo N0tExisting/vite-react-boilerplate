@@ -22,7 +22,6 @@
 		"@storeon/crosstab": "^1.0.2",
 		"@storeon/localstorage": "^1.4.0",
 		"@storeon/undo": "^1.1.0",
-		"is-browser": "^2.1.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet-async": "^1.2.2",

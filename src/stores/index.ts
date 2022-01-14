@@ -1,4 +1,3 @@
-import * as isBrowser from 'is-browser';
 import { createContext, useContext } from 'react';
 import { createStoreon } from 'storeon';
 import { customContext } from 'storeon/react';
@@ -15,7 +14,7 @@ export const store = createStoreon(
 		// eslint-disable-next-line unicorn/prefer-spread -- spread will make this harder to read
 		.concat(
 			(() => {
-				if (!isBrowser) return [];
+				if (import.meta.env.SSR) return [];
 				const plugs = [
 					//undo,
 					persistState(['darkMode']),
