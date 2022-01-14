@@ -1,6 +1,6 @@
 //import DarkMode from '$comp/DarkMode';
 import { createStoreon } from 'storeon';
-import DarkStore from '$store/darkMode';
+import DarkStore from '$store/dark-mode';
 
 describe('Dark Mode', () => {
 	describe('Toggle', () => {

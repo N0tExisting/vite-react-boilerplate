@@ -6,7 +6,7 @@ import { customContext } from 'storeon/react';
 import { persistState } from '@storeon/localstorage';
 import { crossTab } from '@storeon/crosstab';
 import { storeonDevtools } from 'storeon/devtools';
-import DarkMode from './darkMode';
+import DarkMode from './dark-mode';
 
 //const { module: undo, UNDO, REDO } = createHistory([]);
 

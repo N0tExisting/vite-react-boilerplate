@@ -26,6 +26,7 @@
 		"react-hooks",
 		"use-storeon",
 		"mdx",
+		"unicorn",
 		"vest",
 		"prettier"
 	],
@@ -36,6 +37,7 @@
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
 		"plugin:react-hooks/recommended",
+		"plugin:unicorn/recommended",
 		"plugin:mdx/recommended",
 		"plugin:prettier/recommended",
 		"prettier"
@@ -51,21 +53,35 @@
 		"use-storeon/no-unwatched-vars": "error",
 
 		"react/button-has-type": "warn",
-		"react/no-multi-comp": [
-			"error",
-			{
+		// prettier-ignore
+		"react/no-multi-comp": ["error", {
 				"ignoreStateless": true
-			}
-		],
+		}],
 		"react/void-dom-elements-no-children": "error",
-		"react/jsx-no-target-blank": [
-			"warn",
-			{
+		// prettier-ignore
+		"react/jsx-no-target-blank": ["warn", {
 				"allowReferrer": true,
 				"enforceDynamicLinks": "always"
 				//"warnOnSpreadAttributes": <warn>
+		}],
+		"react/jsx-no-script-url": "error",
+
+		// prettier-ignore
+		"unicorn/no-keyword-prefix": ["error", {
+			"checkProperties": true,
+			"onlyCamelCase": false
+		}],
+		"unicorn/no-unused-properties": "warn",
+		"unicorn/no-unsafe-regex": "error",
+		"unicorn/custom-error-definition": "error",
+		// typescript handles this for us
+		"unicorn/no-empty-file": "off",
+		// prettier-ignore
+		"unicorn/filename-case": ["warn", {
+			"cases": {
+				"pascalCase": true,
+				"kebabCase": true
 			}
-		],
-		"react/jsx-no-script-url": "error"
+		}]
 	}
 }
