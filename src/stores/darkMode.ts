@@ -5,6 +5,7 @@ export type DarkMode = 'dark' | 'light';
 
 export type DarkModeEvent<T extends string = string> = `darkMode/${T}`;
 
+// TODO: Make this automatically type itself if needed
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type DarkModeEventMap = Record<DarkModeEvent, any>;
 
@@ -33,6 +34,7 @@ const getInitial = (): DarkMode => {
 	}
 };
 
+// TODO: Use React Helmet to toggle the header
 export function safelySetMode(mode: DarkMode) {
 	if (isBrowser) {
 		document.documentElement.classList.toggle('dark', mode !== 'light');
@@ -40,25 +42,16 @@ export function safelySetMode(mode: DarkMode) {
 }
 
 const DarkModeStore: StoreonModule<DarkModeState, DarkModeEvents> = (store) => {
-	store.on('@init', () => {
-		const initial = getInitial();
-		safelySetMode(initial);
-		return { darkMode: initial };
-	});
+	store.on('@init', () => ({ darkMode: getInitial() }));
 	store.on('@changed', (_, data) => safelySetMode(data.darkMode));
 	// Reducers
 	store.on('darkMode/reset', () => ({ darkMode: getInitial() }));
 	store.on('darkMode/toggle', ({ darkMode: mode }) => {
-		const newMode = mode === 'light' ? 'dark' : 'light';
-		safelySetMode(newMode);
 		return {
-			darkMode: newMode,
+			darkMode: mode === 'light' ? 'dark' : 'light',
 		};
 	});
-	store.on('darkMode/set', (_, event) => {
-		safelySetMode(event);
-		return { darkMode: event };
-	});
+	store.on('darkMode/set', (_, event) => ({ darkMode: event }));
 };
 
 export default DarkModeStore;
