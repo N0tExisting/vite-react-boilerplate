@@ -8,6 +8,9 @@ npm-*.log
 yarn-*.log
 .pnpm-*.log
 
+# Vite's temp config file
+/vite.config.ts.js
+
 # env
 .env.local
 .env.*.local

@@ -36,7 +36,7 @@ export default defineConfig({
 		react(),
 		WindiCSS(),
 		Pages({
-			extensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+			extensions: ['jsx', 'tsx', 'md', 'mdx'],
 			dirs: 'src/routes',
 			syncIndex: false,
 			resolver: 'react',
@@ -66,10 +66,16 @@ export default defineConfig({
 			processConditionalComments: true,
 			useShortDoctype: false,
 		}),
-		//imagetools(),
 	],
 	resolve: {
-		dedupe: ['react', 'react-dom', 'storeon'],
+		dedupe: [
+			'react',
+			'react-dom',
+			'react-router-dom',
+			'react-hemet-async',
+			'@mdx-js/react',
+			'storeon',
+		],
 	},
 	build: {
 		polyfillModulePreload: false,
