@@ -11,18 +11,25 @@ import DarkMode from './darkMode';
 //const { module: undo, UNDO, REDO } = createHistory([]);
 
 export const store = createStoreon(
-	[
-		DarkMode,
-		//undo,
-		persistState(['darkMode']),
-		isBrowser &&
-			crossTab({
-				filter: (type) => {
-					const name = type.toString();
-					return name.startsWith('darkMode/');
-				},
-			}),
-	].concat(import.meta.env.DEV ? storeonDevtools() : []),
+	[DarkMode]
+		// eslint-disable-next-line unicorn/prefer-spread -- spread will make this harder to read
+		.concat(
+			(() => {
+				if (!isBrowser) return [];
+				const plugs = [
+					//undo,
+					persistState(['darkMode']),
+					crossTab({
+						filter: (type) => {
+							const name = type.toString();
+							return name.startsWith('darkMode/');
+						},
+					}),
+				];
+				if (import.meta.env.DEV) plugs.push(storeonDevtools());
+				return plugs;
+			})(),
+		),
 );
 
 //export const Undo = () => store.dispatch(UNDO.valueOf());
