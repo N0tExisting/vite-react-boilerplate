@@ -1,7 +1,7 @@
 import { defineConfig } from '@peeky/test';
 
+// See https://peeky.dev/guide/config.html
 export default defineConfig({
-	// Peeky options here...
 	match: ['**/tests/**/*.(spec|test).(ts|js|mjs|cjs|jsx|tsx)'],
 	ignored: [
 		'**/node_modules/**',
@@ -9,7 +9,7 @@ export default defineConfig({
 		'**/coverage/**',
 		'**/analysis/**',
 	],
-	watchMatch: ['**/*.(js|ts|tsx|jsx)'],
+	watchMatch: ['**/*.(js|ts|tsx|jsx|md|mdx|json)'],
 	watchIgnored: [
 		'**/node_modules/**',
 		'**/dist/**',
@@ -19,5 +19,4 @@ export default defineConfig({
 	collectCoverageMatch: ['src/**/*.(js|jsx|ts|tsx)'],
 	runtimeEnv: 'dom',
 	reporters: ['console-fancy'],
-	//setupFiles: [],
 });
