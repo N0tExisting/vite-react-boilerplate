@@ -14,7 +14,7 @@ yarn-*.log
 # env
 .env.local
 .env.*.local
-/!.env.example.local
+!/.env.example.local
 
 # Misc
 .DS_Store

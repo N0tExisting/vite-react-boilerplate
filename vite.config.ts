@@ -14,6 +14,7 @@ import Pages, { ImportMode, ImportModeResolveFn } from 'vite-plugin-pages';
 
 import mdx from '@mdx-js/rollup';
 import remarkGfm from 'remark-gfm';
+import torchlight from 'remark-torchlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
 
@@ -43,8 +44,10 @@ export default defineConfig({
 			importMode,
 		}),
 		mdx({
+			// TODO: Syntax Highlighting (https://mdxjs.com/guides/syntax-highlighting/) & (https://torchlight.dev/)
 			remarkPlugins: [
 				[remarkGfm, { singleTilde: false }],
+				[torchlight, { config: 'torchlight.config.cjs' }],
 				remarkFrontmatter,
 				remarkMdxFrontmatter,
 			],

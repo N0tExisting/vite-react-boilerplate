@@ -3,6 +3,7 @@ import Nav from '$layout/Nav';
 import ErrorBoundary from '$comp/ErrorBoundary/Boundary';
 import routes from '~react-pages';
 //import Index from '$route/index';
+//import About from '$route/about.mdx';
 //import NotFound from '$route/[...]';
 
 function Routes() {

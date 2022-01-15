@@ -1,6 +1,7 @@
 import { StrictMode, VFC } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
+import { MDXProvider } from '@mdx-js/react';
 import { store, StoreProvider } from '$store';
 import ErrorBoundary from '$comp/ErrorBoundary/Boundary';
 import App from './App';
@@ -12,9 +13,11 @@ const Root: VFC = () => (
 		<ErrorBoundary>
 			<StoreProvider value={store}>
 				<HelmetProvider>
-					<BrowserRouter>
-						<App />
-					</BrowserRouter>
+					<MDXProvider components={(c) => c}>
+						<BrowserRouter>
+							<App />
+						</BrowserRouter>
+					</MDXProvider>
 				</HelmetProvider>
 			</StoreProvider>
 		</ErrorBoundary>
