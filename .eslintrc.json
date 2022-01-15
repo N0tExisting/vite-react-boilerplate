@@ -82,6 +82,13 @@
 				"pascalCase": true,
 				"kebabCase": true
 			}
-		}]
+		}],
+		// prettier-ignore
+		"unicorn/prevent-abbreviations": ["warn", {
+			"replacements": {
+				"props": false
+			}
+		}],
+		"unicorn/no-null": "off"
 	}
 }

@@ -75,14 +75,11 @@ export default class ErrorBoundary extends Component<BoundaryProps, State> {
 	}
 
 	override render() {
-		if (this.state.hasError) {
-			// You can render any custom fallback UI
-			return (
-				// @ts-expect-error Thanks to default Props Fallback is always given
-				<this.props.Fallback reset={this.reset} error={this.state.error} />
-			);
-		} else {
-			return this.props.children;
-		}
+		return this.state.hasError ? (
+			// @ts-expect-error Thanks to default Props Fallback is always given
+			<this.props.Fallback reset={this.reset} error={this.state.error} />
+		) : (
+			this.props.children
+		);
 	}
 }

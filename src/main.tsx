@@ -1,5 +1,5 @@
-import '$util/setupAxe';
+import '$src/utils/setup-axe';
 import { render } from 'react-dom';
 import Root from './Root';
 
-render(<Root />, document.getElementById('root'));
+render(<Root />, document.querySelector('#root'));
