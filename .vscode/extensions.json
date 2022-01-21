@@ -23,7 +23,6 @@
 		"perkovec.emoji",
 		"quicktype.quicktype",
 		"sergelamikhov.aligntokens",
-		"shardulm94.trailing-spaces",
 		"streetsidesoftware.code-spell-checker",
 		"tamasfe.even-better-toml",
 		"team-sapling.sapling",
@@ -35,7 +34,8 @@
 		"wayou.vscode-todo-highlight",
 		"wix.vscode-import-cost",
 		"xyc.vscode-mdx-preview",
-		"jounqin.vscode-mdx"
+		"jounqin.vscode-mdx",
+		"pavellev.trailing-spaces"
 	],
 	"unwantedRecommendations": [
 		"austenc.tailwind-docs",
