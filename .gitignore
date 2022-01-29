@@ -10,6 +10,7 @@ yarn-*.log
 
 # Vite's temp config file
 /vite.config.ts.js
+/peeky.config.ts*.temp.*js
 
 # env
 .env.local

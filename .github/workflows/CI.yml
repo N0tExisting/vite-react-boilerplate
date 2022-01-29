@@ -60,7 +60,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Test
-        run: yarn test
+        run: yarn test --coverage
 
       - name: Upload a Coverage
         uses: actions/upload-artifact@v2.2.4

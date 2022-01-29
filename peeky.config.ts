@@ -16,6 +16,9 @@ export default defineConfig({
 		'**/coverage/**',
 		'**/analysis/**',
 	],
+	isolate: true,
+	// TODO: Configure coverage once it outputs files
+	//collectCoverage: true,
 	collectCoverageMatch: ['src/**/*.(js|jsx|ts|tsx)'],
 	runtimeEnv: 'dom',
 	reporters: ['console-fancy'],
