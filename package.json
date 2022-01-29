@@ -15,7 +15,9 @@
 		"test": "peeky run",
 		"test:open": "peeky open",
 		"analysis": "windicss-analysis",
-		"analysis:build": "windicss-analysis --html analysis"
+		"analysis:build": "windicss-analysis --html analysis",
+		"storybook": "start-storybook -p 6006",
+		"storybook:build": "build-storybook --modern -o docs"
 	},
 	"dependencies": {
 		"@axe-core/react": "^4.3.2",
@@ -34,10 +36,15 @@
 		"vest": "^4.0.3"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.16.10",
 		"@iconify/json": "^1.1.456",
 		"@mdx-js/rollup": "^2.0.0-rc.2",
 		"@peeky/eslint-plugin": "^0.10.2",
 		"@peeky/test": "^0.10.2",
+		"@storybook/addon-actions": "^6.4.16",
+		"@storybook/addon-essentials": "^6.4.16",
+		"@storybook/addon-links": "^6.4.16",
+		"@storybook/react": "^6.4.16",
 		"@testing-library/jest-dom": "^5.16.1",
 		"@testing-library/react": "^12.1.2",
 		"@testing-library/react-hooks": "^7.0.2",
@@ -54,6 +61,7 @@
 		"@windicss/plugin-interaction-variants": "^1.0.0",
 		"@windicss/plugin-question-mark": "^0.1.1",
 		"@windicss/plugin-scrollbar": "^1.2.3",
+		"babel-loader": "^8.2.3",
 		"eslint": "^8.6.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-jest-dom": "^4.0.1",
@@ -62,6 +70,7 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"eslint-plugin-storybook": "^0.5.6",
 		"eslint-plugin-testing-library": "^5.0.3",
 		"eslint-plugin-unicorn": "^40.0.0",
 		"eslint-plugin-use-storeon": "^1.1.0",
@@ -73,6 +82,8 @@
 		"remark-mdx-frontmatter": "^1.1.1",
 		"remark-torchlight": "https://github.com/N0tExisting/remark-torchlight/#patch-1",
 		"rollup-plugin-critical": "^1.0.8",
+		"storybook-builder-vite": "^0.1.14",
+		"storybook-dark-mode": "^1.0.8",
 		"testing-library-selector": "^0.2.1",
 		"typescript": "^4.5.4",
 		"unplugin-icons": "^0.13.0",

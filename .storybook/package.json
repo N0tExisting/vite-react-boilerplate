@@ -1,0 +1,6 @@
+{
+	"name": "storybook-config-override",
+	"description": "An override for storybook's config, see: https://github.com/storybookjs/storybook/issues/10075",
+	"type": "commonjs",
+	"private": true
+}
