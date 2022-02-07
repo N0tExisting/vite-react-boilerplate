@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { MDXProvider } from '@mdx-js/react';
 import { store, StoreProvider } from '$store';
-import ErrorBoundary from '$comp/ErrorBoundary/Boundary';
+import { ErrorBoundary } from '$comp/ErrorBoundary';
 import App from './App';
 import '$style/global.css';
 import 'windi.css';
