@@ -54,7 +54,7 @@
 
 		"react/button-has-type": "warn",
 		// prettier-ignore
-		"react/no-multi-comp": ["error", {
+		"react/no-multi-comp": ["warn", {
 				"ignoreStateless": true
 		}],
 		"react/void-dom-elements-no-children": "error",
@@ -67,7 +67,7 @@
 		"react/jsx-no-script-url": "error",
 
 		// prettier-ignore
-		"unicorn/no-keyword-prefix": ["error", {
+		"unicorn/no-keyword-prefix": ["warn", {
 			"checkProperties": true,
 			"onlyCamelCase": false
 		}],
@@ -84,7 +84,7 @@
 			}
 		}],
 		// prettier-ignore
-		"unicorn/prevent-abbreviations": ["warn", {
+		"unicorn/prevent-abbreviations": ["off", {
 			"replacements": {
 				"props": false
 			}
