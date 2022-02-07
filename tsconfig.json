@@ -55,7 +55,7 @@
 				"./src/utils/*"
 			],
 			"$type/*": [
-				"./src/typings/*"
+				"./src/types/*"
 			],
 			"$style/*": [
 				"./src/styles/*"
@@ -74,7 +74,9 @@
 			]
 		},
 		//"rootDirs": [],									/* Allow multiple folders to be treated as one when resolving modules. */
-		//"typeRoots": [],									/* Specify multiple folders that act like `./node_modules/@types`. */
+		"typeRoots": [										/* Specify multiple folders that act like `./node_modules/@types`. */
+			"./src/typings/"
+		],
 		"types": [											/* Specify type package names to be included without being referenced in a source file. */
 			"vite/types/importMeta",
 			"vite/client",

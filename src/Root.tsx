@@ -13,7 +13,7 @@ const Root: VFC = () => (
 		<ErrorBoundary>
 			<StoreProvider value={store}>
 				<HelmetProvider>
-					<MDXProvider components={(c) => c}>
+					<MDXProvider>
 						<BrowserRouter>
 							<App />
 						</BrowserRouter>
