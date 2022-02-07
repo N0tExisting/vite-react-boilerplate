@@ -78,12 +78,12 @@
 			"./src/typings/"
 		],
 		"types": [											/* Specify type package names to be included without being referenced in a source file. */
-			"vite/types/importMeta",
 			"vite/client",
 			"vite-plugin-pages/client-react",
 			"vite-plugin-svgr/client",
 			"unplugin-icons/types/react",
-			"@types/mdx"
+			"@types/mdx",
+			"./src/types/global"
 		],
 		//"allowUmdGlobalAccess": true,						/* Allow accessing UMD globals from modules. */
 		"resolveJsonModule": true,							/* Enable importing .json files */

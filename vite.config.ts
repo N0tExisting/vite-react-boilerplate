@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin, type ResolvedConfig } from 'vite';
 
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -34,6 +34,7 @@ export default defineConfig(({ command }) => {
 		cacheDir: 'node_modules/.cache/vite',
 		plugins: [
 			Inspect({ enabled: false }),
+			vitePluginAxe(),
 			tsconfigPaths(),
 			react(),
 			WindiCSS(),
@@ -94,6 +95,7 @@ export default defineConfig(({ command }) => {
 		build: {
 			rollupOptions: {
 				output: {
+					//* https://tradingstrategy.ai/blog/optimizing-page-load-speed-on-sveltekit#optimizing-css-bundles
 					manualChunks: undefined,
 				},
 			},
@@ -104,3 +106,27 @@ export default defineConfig(({ command }) => {
 		},
 	};
 });
+
+function vitePluginAxe(): Plugin {
+	let command: 'build' | 'serve';
+	return {
+		name: 'vite-plugin-axe',
+		configResolved: (config) => {
+			command = config.command;
+		},
+		resolveId(id) {
+			if (id === '~axe') return '\x00~axe';
+			else return null;
+		},
+		load(id, { ssr }) {
+			if (id === '~axe' || id === '\x00~axe') {
+				if (command === 'serve' && !ssr) {
+					return `import R from'react';import D from'react-dom';import a from'@axe-core/react';await a(R,D,500)`;
+				} else {
+					return '\n';
+				}
+			}
+			return null;
+		},
+	};
+}

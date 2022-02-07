@@ -1,4 +1,4 @@
-import '$src/utils/setup-axe';
+import '~axe';
 import { render } from 'react-dom';
 import Root from './Root';
 
