@@ -1,13 +1,16 @@
-import { defineConfig, type Plugin, type ResolvedConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 
 import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import WindiCSS from 'vite-plugin-windicss';
 import svgrPlugin from 'vite-plugin-svgr';
-import { minifyHtml } from 'vite-plugin-html';
+import { createHtmlPlugin } from 'vite-plugin-html';
 import Icons from 'unplugin-icons/vite';
 import { envConfig } from 'vite-plugin-env-config';
-import Pages, { ImportMode, ImportModeResolveFn } from 'vite-plugin-pages';
+import Pages, {
+	type ImportMode,
+	type ImportModeResolver,
+} from 'vite-plugin-pages';
 // TODO: https://github.com/JonasKruckenberg/imagetools/blob/main/docs/README.md
 import Inspect from 'vite-plugin-inspect';
 
@@ -18,7 +21,7 @@ import remarkFrontmatter from 'remark-frontmatter';
 import { remarkMdxFrontmatter } from 'remark-mdx-frontmatter';
 
 let shown = false;
-const importMode: ImportModeResolveFn = (path) => {
+const importMode: ImportModeResolver = (path) => {
 	let retVal: ImportMode = 'async';
 	if (path.endsWith('/src/routes/[...].tsx')) {
 		retVal = 'sync';
@@ -30,6 +33,10 @@ const importMode: ImportModeResolveFn = (path) => {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
+	const isDev =
+		/^dev(?:elop(?:ment)?)?$/i.test(process.env.NODE_ENV) ||
+		command === 'serve';
+
 	return {
 		cacheDir: 'node_modules/.cache/vite',
 		plugins: [
@@ -41,7 +48,6 @@ export default defineConfig(({ command }) => {
 			Pages({
 				extensions: ['jsx', 'tsx', 'md', 'mdx'],
 				dirs: 'src/routes',
-				syncIndex: false,
 				resolver: 'react',
 				importMode,
 			}),
@@ -52,10 +58,11 @@ export default defineConfig(({ command }) => {
 					remarkFrontmatter,
 					remarkMdxFrontmatter,
 				],
+				providerImportSource: '@mdx-js/react',
 				//jsx: true,
 				//jsxRuntime: 'automatic',
 				//jsxImportSource: 'react',
-				//development: command === 'serve',
+				development: isDev,
 			}),
 			svgrPlugin(),
 			envConfig(),
@@ -63,16 +70,19 @@ export default defineConfig(({ command }) => {
 				compiler: 'jsx',
 				jsx: 'react',
 			}),
-			minifyHtml({
-				collapseWhitespace: true,
-				removeComments: true,
-				decodeEntities: true,
-				minifyCSS: true,
-				minifyJS: true,
-				removeAttributeQuotes: false,
-				removeEmptyAttributes: true,
-				processConditionalComments: true,
-				useShortDoctype: false,
+			createHtmlPlugin({
+				minify: {
+					collapseWhitespace: true,
+					removeComments: true,
+					decodeEntities: true,
+					minifyCSS: true,
+					minifyJS: true,
+					removeAttributeQuotes: false,
+					removeEmptyAttributes: true,
+					processConditionalComments: true,
+					useShortDoctype: false,
+				},
+				entry: undefined,
 			}),
 		],
 		optimizeDeps: {
