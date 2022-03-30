@@ -35,7 +35,8 @@
 		"wix.vscode-import-cost",
 		"xyc.vscode-mdx-preview",
 		"jounqin.vscode-mdx",
-		"pavellev.trailing-spaces"
+		"pavellev.trailing-spaces",
+		"ZixuanChen.vitest-explorer"
 	],
 	"unwantedRecommendations": [
 		"austenc.tailwind-docs",
