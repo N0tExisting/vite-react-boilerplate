@@ -128,9 +128,9 @@ function vitePluginAxe(): Plugin {
 			if (id === '~axe') return '\x00~axe';
 			else return null;
 		},
-		load(id, { ssr }) {
+		load(id, opts) {
 			if (id === '~axe' || id === '\x00~axe') {
-				if (command === 'serve' && !ssr) {
+				if (command === 'serve' && !opts?.ssr) {
 					return `import R from'react';import D from'react-dom';import a from'@axe-core/react';await a(R,D,500)`;
 				} else {
 					return '\n';
