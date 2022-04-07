@@ -18,8 +18,14 @@ export default defineConfig({
 	],
 	isolate: true,
 	// TODO: Configure coverage once it outputs files
-	//collectCoverage: true,
-	collectCoverageMatch: ['src/**/*.(js|jsx|ts|tsx)'],
+	collectCoverage: true,
+	coverageOptions: {
+		all: true,
+		include: ['**/src/**/*.ts', '**/src/**/*.tsx'],
+		excludeNodeModules: true,
+		extension: ['.ts', '.tsx', 'js', 'jsx'],
+		reporter: ['text', 'text-summary', 'lcov', 'clover', 'cobertura', 'json'],
+	},
 	runtimeEnv: 'dom',
 	reporters: ['console-fancy'],
 });
