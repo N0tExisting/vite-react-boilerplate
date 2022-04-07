@@ -55,14 +55,14 @@
 		"react/button-has-type": "warn",
 		// prettier-ignore
 		"react/no-multi-comp": ["warn", {
-				"ignoreStateless": true
+			"ignoreStateless": true
 		}],
 		"react/void-dom-elements-no-children": "error",
 		// prettier-ignore
 		"react/jsx-no-target-blank": ["warn", {
-				"allowReferrer": true,
-				"enforceDynamicLinks": "always"
-				//"warnOnSpreadAttributes": <warn>
+			"allowReferrer": true,
+			"enforceDynamicLinks": "always"
+			//"warnOnSpreadAttributes": <warn>
 		}],
 		"react/jsx-no-script-url": "error",
 

@@ -67,6 +67,7 @@ export default class ErrorBoundary extends Component<BoundaryProps, State> {
 		}
 		if (
 			!this.state.error &&
+			// eslint-disable-next-line react/prop-types
 			!Object.is(this.props.children, nextProps.children)
 		) {
 			return true;
@@ -79,6 +80,7 @@ export default class ErrorBoundary extends Component<BoundaryProps, State> {
 			// @ts-expect-error Thanks to default Props Fallback is always given
 			<this.props.Fallback reset={this.reset} error={this.state.error} />
 		) : (
+			// eslint-disable-next-line react/prop-types
 			this.props.children
 		);
 	}
