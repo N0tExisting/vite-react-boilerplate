@@ -16,7 +16,7 @@ function Pages() {
 	const loc = useLocation();
 	const route = useRoutes(routes, loc);
 	// eslint-disable-next-line no-constant-condition
-	if (import.meta.env.DEV && true) {
+	if (import.meta.env.DEV && false) {
 		console.log('Using Custom Route Component');
 		throw new Error('Test Error');
 		return <LoadingPage />;
