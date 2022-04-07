@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite-plugin-windicss';
+import { defineConfig } from 'windicss/helpers';
 import plugin from 'windicss/plugin';
 
 export default defineConfig({
@@ -15,19 +15,23 @@ export default defineConfig({
 			'./src/**/*.{css,scss,pcss}',
 		],
 	},
+	alias: {
+		'col-prim': 'bg-gray-100 text-gray-700 dark:(text-gray-100 bg-gray-700)',
+	},
 	theme: {
-		fontFamily: {
-			mono: [
-				'source-code-pro',
-				'Menlo',
-				'Monaco',
-				'Consolas',
-				'"Liberation Mono"',
-				'"Courier New"',
-				'monospace',
-			],
+		extend: {
+			fontFamily: {
+				mono: [
+					'source-code-pro',
+					'Menlo',
+					'Monaco',
+					'Consolas',
+					'"Liberation Mono"',
+					'"Courier New"',
+					'monospace',
+				],
+			},
 		},
-		extend: {},
 	},
 	plugins: [
 		plugin(({ addUtilities, addDynamic, variants }) => {

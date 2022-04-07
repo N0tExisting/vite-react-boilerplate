@@ -2,8 +2,9 @@ import { StrictMode, VFC } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { MDXProvider } from '@mdx-js/react';
-import { store, StoreProvider } from '$store';
 import { ErrorBoundary } from '$comp/ErrorBoundary';
+import { store, StoreProvider } from '$store';
+import MdxComponents from '$util/mdx';
 import App from './App';
 import '$style/global.css';
 import 'windi.css';
@@ -13,7 +14,7 @@ const Root: VFC = () => (
 		<ErrorBoundary>
 			<StoreProvider value={store}>
 				<HelmetProvider>
-					<MDXProvider>
+					<MDXProvider components={MdxComponents}>
 						<BrowserRouter>
 							<App />
 						</BrowserRouter>
